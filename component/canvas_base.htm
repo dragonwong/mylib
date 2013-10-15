@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvas</title>
+</head>
+<body>
+	<canvas id="canvas" width="1200" height="650">
+		抱歉，您的浏览器不支持canvas绘图，推荐使用<a href="http://www.google.com/chrome" target="_blank">chrome浏览器</a>
+	</canvas>
+</body>
+<script>
+	//画布初始化
+	var w = 1200 , h = 650;
+	var canvas=document.getElementById("canvas");
+	var context=canvas.getContext('2d');
+	context.fillStyle="#272822";
+	context.fillRect(0,0,w,h);
+</script>
+</html>
