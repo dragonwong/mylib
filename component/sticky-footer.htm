@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sticky footer</title>
+<!--[if lte IE 8]>
+<script>
+(function(){
+	if(!/*@cc_on!@*/0)
+		return;
+	var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,figcaption,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','),
+		i=e.length;
+	while(i--){
+		document.createElement(e[i]);
+	}
+})();
+</script>
+<style>
+	header,footer{
+		display: block;
+	}
+</style>
+<![endif]-->
+
+<style>
+	/* main css */
+	html{
+		height: 100%;
+	}
+	body{
+		height: 100%;
+	}
+		.main{
+			min-height: 100%;
+			height: auto !important;
+			height: 100%;
+		}
+			.body{
+				padding-bottom: 40px;
+			}
+		footer{
+			margin-top: -40px;
+			height: 40px;
+			line-height: 40px;
+		}
+
+	/* base css */
+	h1,p{
+		margin: 0;
+	}
+	body{
+		margin: 0;
+	}
+		.main{
+			background: #eee;
+			padding: 0 20px;
+		}
+			header{
+				padding: 20px 0;
+			}
+			.body{
+				margin-top: 20px;
+			}
+				p{
+					margin-top: 10px;
+				}
+		footer{
+			background: #28292a;
+			color: #fff;
+			padding: 0 20px;
+		}
+</style>
+</head>
+<body>
+	<div class="main">
+		<header>
+			<h1>make the footer stick to the bottom of the page</h1>
+		</header>
+		
+		<div class="body">
+			<p>This method was from the page: <a href='http://ryanfait.com/sticky-footer/' target="_blank">http://ryanfait.com/sticky-footer/</a>.</p>
+			<p>I did some change. I removed tag &lt;div class="push"&gt;.</p>
+			<p>I tested in ie7, ff and chrome.</p>
+		</div>
+		
+	</div>
+
+	<footer class="foot">
+		<div class="copyright">Copyright © 2012-2013 Molecular Cell Biology Laboratory.</div>
+	</footer>
+</body>
+</html>
