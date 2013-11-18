@@ -1,8 +1,6 @@
-#### ghost自定义主题 ####
-
-
 #### blog ####
 tumblr theme
+域名
 
 
 #### remind ####
