@@ -43,8 +43,9 @@ reflog			查看命令历史
 reset --hard HEAD^	回退上一个版本
 reset --hard <版本号>	回退某一个版本
 
-clone git@github.com:dragonwong/hello-2.git		远程克隆
-remote add origin git@github.com:dragonwong/hello-1.git	远程创建
+clone git@github.com:dragonwong/hello-2.git			远程克隆
+remote add origin git@github.com:dragonwong/hello-1.git		远程创建(key)
+remote add origin https://github.com/username/Hello-World.git	远程创建(password)
 push -u origin master 					提交到远程
 push --set-upstream origin <brach-name>			向远程推送分支
 pull <remote> <branch>		从远程更新到本地branch
