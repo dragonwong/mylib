@@ -19,6 +19,13 @@
             this.classList.remove(name);
         }
     };
+    Element.prototype.toggleClass = function(name){
+    	if(this.hasClass(name)){
+    		this.removeClass(name);
+    	}else{
+    		this.addClass(name);
+    	}
+    };
 
     function ajaxPost(url, data, callback){
         var xhr = new XMLHttpRequest();
