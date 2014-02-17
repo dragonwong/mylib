@@ -1,0 +1,10 @@
+###win###
+
+1.
+open an explorer window from cmd
+  explorer/start
+(like [open] in mac)
+
+2.
+switch tab in chrome
+ctr + pageup/pagedown
