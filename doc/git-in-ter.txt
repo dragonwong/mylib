@@ -30,6 +30,7 @@ diff <file>		查看修改内容(add之后无效)
 diff HEAD <file>	查看工作区文件和版本库的差异
 diff --cached <file>	查看缓存区(git add后)文件与版本库的差异
 diff <branch-name> <branch-name>	比较分支差异
+diff <branch-name>..<branch-name> <file>	比较分支差异
 diff <branch-name>...<branch-name>	比较后者在前者被创建后发生的差异
 
 checkout -- <file>	版本库里的版本替换工作区的版本
@@ -57,9 +58,11 @@ checkout -t origin/<branch-name>	克隆远程分支到本地（本地没有该�
 remote -v              	查看远程服务器地址和仓库名称
 remote rm <remote-name>	删除远程仓库
 
-checkout -b <branch-name>	创建分支
+checkout -b <branch-name>		创建分支
 checkout --orphan <branch-name>	创建无父节点的分支
-branch -d <branch-name>	删除分支
+branch -m <oldname> <newname>	分支重命名
+branch -m <newname>				当前分支重命名
+branch -d <branch-name>			删除分支
 branch				查看分支
 branch -a			查看分支(包括远程)
 checkout <branch-name>		切换分支
