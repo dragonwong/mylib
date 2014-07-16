@@ -17,6 +17,8 @@ open .			打开当前目录
 
 sudo shutdown -h <time>	一定时间关机，time为now立即关机
 
+
+gitk			可视化工具
 【git+】
 
 status			仓库当前的状态
