@@ -163,3 +163,23 @@
 
 		return args;
 	}
+
+	/**
+	 * simple selector
+	 * 简单的标签选择器
+	 * 
+	 * @param  {Element}	ele 		父元素
+	 * @param  {String}		tagName 	目标元素标签
+	 * @param  {String}		className 	目标元素样式
+	 * @return {Element}				目标元素，没有返回 undefined
+	 */
+	function simpleQuery(ele, tagName, className) {
+		var reg = new RegExp('\\b'+className+'(\\s|$)','g'),
+			elesByTagName = ele.getElementsByTagName(tagName)
+
+		for (var i = 0, len = elesByTagName.length; i < len; i++) {
+			if (elesByTagName[i].className.match(reg)) {
+				return elesByTagName[i]
+			}
+		}
+	}

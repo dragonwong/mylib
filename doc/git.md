@@ -1,29 +1,6 @@
-mkdir <dir>		创建文件夹
-pwd			显示当前目录
-cd			进入主目录
-cd -			返回进入此目录之前所在目录
-cd ..			进入上一级目录
-cd ../..		进入上两级目录
-
-touch <file>		创建文件
-vi <file>		用vi创建文件并编辑(vi 退出 :wq)
-rm <file>		删除文件
-rm -rf <dir>		删除目录
-	-r	向下递归，一并删除
-	-f	强行删除，不做提示
-cat <file>		一次显示整个文件
-
-open .			打开当前目录
-
-sudo shutdown -h <time>	一定时间关机，time为now立即关机
-
-
 gitk			可视化工具
 【git+】
 
-status			仓库当前的状态
-add <file>
-commit -m "comment"	
 commit -a -m "comment"	可以省略add操作
 
 mv file_from file_to	文件重命名
@@ -42,9 +19,12 @@ checkout -- <file>	版本库里的版本替换工作区的版本
 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD <file>，就回到了场景1，第二步按场景1操作。
 
 log			查看提交历史
-reflog			查看命令历史
 reset --hard HEAD^	回退上一个版本
 reset --hard <版本号>	回退某一个版本
+
+reflog		查看命令历史
+reset HEAD@{<num>}	回退到某一命令
+
 
 clone git@github.com:dragonwong/hello-2.git			远程克隆
 
@@ -62,15 +42,18 @@ fetch				从远程更新（本地无修改，不自动合并）
 checkout -t origin/<branch-name>	克隆远程分支到本地（本地没有该分支）
 
 
-checkout -b <branch-name>		创建分支
+checkout -b <branch-name>       创建分支
+checkout -b <branch-name> <origin>/<branch-name>		根据远程创建分支
 checkout --orphan <branch-name>	创建无父节点的分支
 branch -m <oldname> <newname>	分支重命名
 branch -m <newname>				当前分支重命名
 branch -d <branch-name>			删除分支
 branch				查看分支
-branch -a			查看分支(包括远程)
+branch -r           查看远程分支
+branch -a			查看所有分支(包括远程)
 checkout <branch-name>		切换分支
 checkout <file>			签出文件（撤销更改）
+clean -df 				删除所有untracked的文件
 merge <branch-name>		合并指定分支到当前分支
 merge --no-ff -m "merge with no-ff" <branch-name>	禁用“Fast forward”合并分支
 log --graph			查看分支合并图

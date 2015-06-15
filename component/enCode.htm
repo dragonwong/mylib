@@ -90,10 +90,7 @@ body{
         function htmlEnCode(text){
             var temp = document.createElement("DIV"); 
             setInnerText(temp, text);
-            text = temp.innerHTML;
-            temp = null;
-
-            return text; 
+            return temp.innerHTML;
         }
 
         function setInnerText(element, text){                   //debug ff
