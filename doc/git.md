@@ -39,7 +39,10 @@ push --set-upstream origin <brach-name>			向远程推送分支
 pull <remote> <branch>		从远程更新到本地branch
 pull				从远程更新（本地有修改）
 fetch				从远程更新（本地无修改，不自动合并）
-checkout -t origin/<branch-name>	克隆远程分支到本地（本地没有该分支）
+
+- `checkout -t origin/<branch-name>`
+	
+	克隆远程分支到本地（本地没有该分支）
 
 
 checkout -b <branch-name>       创建分支
@@ -59,10 +62,23 @@ merge --no-ff -m "merge with no-ff" <branch-name>	禁用“Fast forward”合并
 log --graph			查看分支合并图
 
 
-git指令后面加 > <file>可以将内容输出到指定文件，比如：
-git diff > diff.txt
-git status > status.txt
+- `config --global user.name "robbin"`
 
-config --global user.name "robbin"   
-config --global user.email "fankai@gmail.com"
-config --l			 列举所有配置
+- `config --global user.email "fankai@gmail.com"`
+
+- `config --l`
+	
+	列举所有配置
+
+- `git rm --cached xxx.xx`	
+
+	delete the file from git without actually deleting it from the filesystem.
+	
+## submodule
+
+* 子模块信息记载在以下文件中：`.gitmodules`，`.git/config`
+
+资料：
+
+* [Git - Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+* [How do I remove a Git submodule?](http://stackoverflow.com/a/1260982/2388446)

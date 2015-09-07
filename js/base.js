@@ -183,3 +183,12 @@
 			}
 		}
 	}
+
+/**
+ * simple selector
+ * @param  {String} selector
+ * @return {Element}
+ */
+function $(selector) {
+	return document.querySelector(selector)
+}
