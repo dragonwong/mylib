@@ -1,0 +1,30 @@
+/**
+ * @description 定义单行文字垂直居中的行高
+ * @method responsive
+ * @param {Length} $height 行高
+ */
+@mixin height-center($height) {
+	height: $height;
+    line-height: $height;
+};
+
+/**
+ * 自适应正方形
+ */
+.squre {
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+    
+    > .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
