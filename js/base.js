@@ -58,24 +58,29 @@ Element.prototype.toggleClass = function(name){
  * @param {String} url - The URL to which the request is sent
  * @param {Object} data - Data to be sent to the server
  * @param {Function} callback - A function to be called if the request succeeds
+ *
+ * @return {Promise} result
  */
-function ajaxPost(url, data, callback){
-	var xhr = new XMLHttpRequest();
+function ajaxPost(url, data) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
 
-	xhr.open("post", url, true);
-	xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	xhr.send(data);
+    xhr.open('post', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send(data);
 
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState == 4){
-			if((xhr.status>=200 && xhr.status<300) || xhr.status == 304){
-				callback(xhr.responseText);
-			}else{
-				console.log("failed: " + xhr.status);
-			}
-		}
-	};
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+          resolve(xhr.responseText);
+        } else {
+          reject(xhr);
+        }
+      }
+    };
+  });
 }
+
 
 /**
  * Get by ajax
