@@ -1,3 +1,3 @@
 mylib
 =====
-It is a lib where i store my code.
+It is a lib where I store my code.
